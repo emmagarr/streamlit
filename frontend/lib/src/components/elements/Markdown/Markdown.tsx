@@ -41,7 +41,9 @@ export default function Markdown({
   return (
     <div className="stMarkdown" data-testid="stMarkdown" style={styleProp}>
       {element.help ? (
-        <StyledLabelHelpWrapper>
+        <StyledLabelHelpWrapper
+          isLatex={element.elementType === MarkdownProto.Type.LATEX}
+        >
           <StreamlitMarkdown
             isCaption={element.isCaption}
             source={element.body}
